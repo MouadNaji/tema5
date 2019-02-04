@@ -17,12 +17,12 @@
             return (l * b);
         }
         let resultat = "arealet er " + areal(længde, bredde) + " Vil du prøve igen?";
-        confirm(resultat);
 
-        if (confirm) {
+        if (confirm(resultat) == true) {
             location.reload();
+        } else {
+            alert("thats very sad");
         }
-
     </script>
 </body>
 
