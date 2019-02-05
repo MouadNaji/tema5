@@ -39,6 +39,23 @@
 
             document.querySelector(".firkant").innerHTML = `<img src = ${firkantURL} alt = "frø">`;
             document.querySelector(".cirkel").innerHTML = `<img src = ${cirkelURL} alt ="gris" >`;
+
+            let firkant = document.querySelector(".firkant")
+            let cirkel = document.querySelector(".cirkel")
+
+            firkant.addEventListener("click", Skiftplads);
+            cirkel.addEventListener("click", stop);
+
+            function Skiftplads() {
+                let firkantStart = firkant.innerHTML;
+                firkant.innerHTML = cirkel.innerHTML;
+                cirkel.innerHTML = firkantStart;
+            }
+
+            function stop() {
+                firkant.removeEventListener("click", Skiftplads);
+
+            }
         }
     </script>
 </body>
