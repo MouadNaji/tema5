@@ -106,6 +106,22 @@
     </div>
 
     <script>
+        let rødknap = document.querySelector("#redBut");
+        let gulknap = document.querySelector("#yellowBut");
+        let blåknap = document.querySelector("#blueBut");
+        let bold = document.querySelector("#bold");
+        rødknap.addEventListener("click", () => {
+            bold.style.backgroundColor = "red";
+        })
+        gulknap.addEventListener("click", () => {
+            bold.style.backgroundColor = "yellow";
+        })
+        blåknap.addEventListener("click", () => {
+            bold.style.backgroundColor = "blue";
+        })
+        bold.addEventListener("click", () => {
+            bold.style.backgroundColor = "white";
+        })
     </script>
 
 </body>
