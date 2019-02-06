@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .firkant {
+            height: 50vw;
+            width: 50vw;
+            background-color: green;
+            text-align: center;
+            line-height: 60vw;
+        }
+
+        .cirkel {
+            background-color: red;
+            height: 50vw;
+            width: 50vw;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 60vw;
+        }
+
+        .red {
+            background-color: red;
+            transition: 1.5s;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="firkant"></div>
+    <div class="cirkel"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", doSomethig);
+
+        let firkantURL = "http://helf-kea.dk/test/frog.png";
+        let cirkelURL = "http://helf-kea.dk/test/gris.png";
+
+        function doSomethig() {
+
+            document.querySelector(".firkant").innerHTML = `<img src = ${firkantURL} alt = "frø">`;
+            document.querySelector(".cirkel").innerHTML = `<img src = ${cirkelURL} alt ="gris" >`;
+
+            let firkant = document.querySelector(".firkant")
+            let cirkel = document.querySelector(".cirkel")
+
+            firkant.addEventListener("click", Skiftplads);
+            cirkel.addEventListener("click", stop);
+
+            function Skiftplads() {
+                let firkantStart = firkant.innerHTML;
+                firkant.innerHTML = cirkel.innerHTML;
+                cirkel.innerHTML = firkantStart;
+            }
+
+            function stop() {
+                firkant.removeEventListener("click", Skiftplads);
+                firkant.style.backgroundColor = "red";
+                firkant.style.transition = "1.5s";
+
+
+
+
+            }
+        }
+
+    </script>
+</body>
