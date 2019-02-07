@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div></div>
+    <script>
+        let dyrene = [{
+                "navn": "gris",
+                "type": "pattedyr",
+                "billede": "http://helf-kea.dk/test/gris.png",
+                "levested": "svinefarme"
+            },
+
+            {
+                "navn": "frø",
+                "type": "tudse",
+                "billede": "http://helf-kea.dk/test/frog.png",
+                "levested": "sø"
+            },
+
+            {
+                "navn": "ræv",
+                "type": "pattedyr",
+                "billede": "http://helf-kea.dk/test/fox.png",
+                "levested": "skov"
+            },
+
+
+
+            {
+                "navn": "sild",
+                "type": "fisk",
+                "billede": "http://helf-kea.dk/test/sild.jpg",
+                "levested": "havet"
+            },
+
+            {
+                "navn": "krokodille",
+                "type": "firben",
+                "billede": "http://helf-kea.dk/test/kroko.jpg",
+                "levested": "sø"
+            }
+
+        ]
+        document.addEventListener("DOMContentLoaded", start)
+
+        function start() {
+            let div = document.querySelector("div")
+            dyrene.forEach(dyr => {
+                div.innerHTML += `<h1>Navn: ${dyr.navn}</h1> <img src = ${dyr.billede} alt= ${dyr.billede}> <br> <p>Type: ${dyr.type} Levedested: ${dyr.levested}</p>`
+
+            })
+        }
+    </script>
+</body>
+</html>
