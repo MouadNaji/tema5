@@ -8,15 +8,52 @@
     <style>
         .minedyr {
             border: 30vw;
-            background-color: blue;
             margin: 3vw;
-            border-bottom-color: green;
+            border: solid;
+        }
+
+        #dy {
+            margin: 0 20vw;
+        }
+
+        h1 {
+            margin: 0 15vw;
+        }
+
+        p {
+            margin: 0 0 0 1vw;
+        }
+
+        .d {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1vw;
+            margin: 0 10vw;
+
+        }
+
+        @media only screen and (min-width: 500px) {
+            .d {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1vw;
+            }
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .d {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1vw;
+            }
+
         }
     </style>
 </head>
 
 <body>
-    <div></div>
+    <div class="d"></div>
     <script>
         let dyrene = [{
                 "navn": "gris",
@@ -62,7 +99,7 @@
         function start() {
             let div = document.querySelector("div")
             dyrene.forEach(dyr => {
-                div.innerHTML += `<div class="minedyr"><h1>Navn: ${dyr.navn}</h1> <img src = ${dyr.billede} alt= ${dyr.billede}> <br> <p>Type: ${dyr.type} Levedested: ${dyr.levested}</p></div>`
+                div.innerHTML += `<div class="minedyr"><h1>Navn: ${dyr.navn}</h1> <img id="dy" src = ${dyr.billede} alt= "dyr"> <br> <p>Type: ${dyr.type} <br> Levedested: ${dyr.levested}</p></div>`
 
             })
         }
