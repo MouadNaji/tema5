@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        .minedyr {
+            border: 30vw;
+            margin: 3vw;
+            border: solid;
+            width: 90vw;
+        }
+
+        .d {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1vw;
+
+        }
+
+        h2 {
+            text-align: center
+        }
+
+        #dy {
+            height: 50vw;
+            width: 50vw;
+
+        }
+
+        @media only screen and (min-width: 500px) {
+            .d {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1vw;
+                margin: 0
+            }
+
+            #dy {
+                height: 30vw;
+                width: 30vw;
+                align-self: center;
+            }
+
+            .minedyr {
+                margin: 0;
+                width: 45vw;
+            }
+
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .d {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1vw;
+                margin: 0;
+            }
+
+            .minedyr {
+                margin: 0;
+                width: 31vw;
+            }
+
+            #dy {
+                height: 20vw;
+                width: 20vw;
+
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="d"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+
+        let personerne;
+        async function start() {
+            const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+            personerne = await json.json();
+            vispersonerene();
+        }
+
+        function vispersonerene() {
+            let div = document.querySelector("div");
+
+            personerne.forEach(person => {
+                div.innerHTML += `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p></div>`
+            })
+        }
+
+    </script>
+</body>
+
+</html>

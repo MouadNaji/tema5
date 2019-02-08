@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        .minedyr {
+            border: 30vw;
+            margin: 3vw;
+            border: solid;
+        }
+
+        .d {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1vw;
+
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        @media only screen and (min-width: 500px) {
+            .d {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1vw;
+            }
+
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .d {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1vw;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+
+        let dyrene;
+        async function start() {
+            const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1eBNqPb_SgxmA2kVMKTKGLCg5qyrGd0HoXPzaYXe7qJA");
+            dyrene = await json.json();
+            visdyrene();
+        }
+
+        function visdyrene() {
+            let div = document.querySelector("div");
+
+            dyrene.forEach(dyr => {
+                div.innerHTML += `<div class="minedyr"><h1>Navn: ${dyr.navn}</h1> <img id="dy" src = ${dyr.billede} alt= "dyr"> <br> <p>Type: ${dyr.type} <br> Levedested: ${dyr.levested}</p></div>`
+            })
+        }
+    </script>
+</body>
+</html>
