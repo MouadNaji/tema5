@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babushka</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            margin: 0;
+            background-color: antiquewhite;
+        }
+
+        h1 {
+            font-family: cursive;
+            margin: 0.3vw 1vw;
+            background-color: gray;
+            padding: inherit;
+        }
+
+        h2 {
+            font-family: cursive;
+            margin: 0.3vw 1vw;
+        }
+
+        p {
+            font-family: monospace;
+            margin: 0.3vw 1vw;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            width: 40vw;
+
+
+        }
+
+        .mineretter {
+            margin: 0.5vw;
+            width: 100vw;
+            background-color: #bececb;
+        }
+
+        .mineretter:nth-child(odd) {
+            background-color: #c4aeae;
+        }
+
+        #billede {
+            height: 70vw;
+            width: 100vw;
+        }
+
+        @media only screen and (min-width: 600px) {
+            #liste {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #billede {
+                height: 30vw;
+                width: 40vw;
+            }
+
+            .mineretter {
+                margin: 0.5vw;
+                width: 40vw;
+            }
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            #liste {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+
+            }
+
+            #billede {
+                height: 15vw;
+                width: 20vw;
+            }
+
+            .mineretter {
+                width: 20vw;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Menu</h1>
+    <div id="liste"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+
+        let retter;
+        async function start() {
+            const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
+            retter = await json.json();
+            visRetterne();
+        }
+
+        function visRetterne() {
+            let liste = document.querySelector("#liste");
+
+            retter.forEach(ret => {
+                liste.innerHTML += `</h1><div class="mineretter"><img id="billede" src=imgs/small/${ret.billede}-sm.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p>Pris: ${ret.pris}</p></div>`
+            })
+        }
+    </script>
+</body>
+
+</html>
