@@ -129,10 +129,15 @@
         }
 
         document.querySelectorAll(".filter").forEach(knap => {
+
             knap.addEventListener("click", filtrering);
         })
 
         function filtrering() {
+            document.querySelectorAll(".filter").forEach(knap => {
+                knap.classList.remove("valgt");
+            });
+            this.classList.add("valgt");
             document.querySelector("h1").textContent = this.textContent;
             filter = this.getAttribute("data-hold");
             console.log(filter);
