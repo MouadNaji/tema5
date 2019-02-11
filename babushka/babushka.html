@@ -24,10 +24,9 @@
         h1 {
             font-family: cursive;
             margin: 0;
-            background-color: gray;
             padding: inherit;
-            border-bottom-left-radius: 2vw;
             padding: 1vw 02vw;
+
 
         }
 
@@ -69,6 +68,29 @@
             height: 70vw;
             width: 100vw;
 
+        }
+
+        #beholder {
+            text-align: center;
+        }
+
+
+        .menu {
+            text-align: center;
+        }
+
+        .filter {
+            width: 20vw;
+            height: 8vw;
+            border-radius: 2vw;
+            font-size: 3vw;
+            font-feature-settings: bold;
+            margin: 1vw;
+            background-color: #bececb;
+        }
+
+        .valgt {
+            background-color: #c4aeae;
         }
 
         @media only screen and (min-width: 600px) {
@@ -120,16 +142,36 @@
 
 
 <body>
-
+    <div class="menu">
+        <button class="filter valgt" data-hold="alle">
+            Alle
+        </button>
+        <button class="filter" data-hold="forretter">
+            Forretter
+        </button>
+        <button class="filter" data-hold="hovedretter">
+            Hovedretter
+        </button>
+        <button class="filter" data-hold="desserter">
+            Desserter
+        </button>
+        <button class="filter" data-hold="drikkevarer">
+            Drikkevarer
+        </button>
+        <button class="filter" data-hold="sideorders">
+            Sideorders
+        </button>
+    </div>
     <h1>Menu</h1>
-
-    <div id="liste"></div>
-
+    <div id="beholder">
+        <div id="liste"></div>
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", start)
 
 
         let retter = [];
+        let filter = "alle";
 
 
         async function start() {
@@ -137,6 +179,10 @@
             const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
 
             retter = await json.json();
+            retter.sort((a, b) => {
+                return a.navn.localeCompare(b.navn);
+
+            });
 
             visRetterne();
 
@@ -146,14 +192,29 @@
         function visRetterne() {
 
             let liste = document.querySelector("#liste");
-
+            liste.innerHTML = "";
 
             retter.forEach(ret => {
-
-                liste.innerHTML += `</h1><div class="mineretter"><img id="billede" src=imgs/small/${ret.billede}-sm.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p>Pris: ${ret.pris}</p></div>`
+                if (filter == "alle" || ret.kategori == filter)
+                    liste.innerHTML += `</h1><div class="mineretter"><img id="billede" src=imgs/small/${ret.billede}-sm.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p>Pris: ${ret.pris}</p></div>`
 
             })
 
+        }
+        document.querySelectorAll(".filter").forEach(knap => {
+
+            knap.addEventListener("click", filtrering);
+        })
+
+        function filtrering() {
+            document.querySelectorAll(".filter").forEach(knap => {
+                knap.classList.remove("valgt");
+            });
+            this.classList.add("valgt");
+            document.querySelector("h1").textContent = this.textContent;
+            filter = this.getAttribute("data-hold");
+            console.log(filter);
+            visRetterne();
         }
     </script>
 
