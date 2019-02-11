@@ -106,7 +106,7 @@
     </div>
     <div class="liste"></div>
     <script>
-        document.addEventListener("DOMContentLoaded", start)
+        document.addEventListener("DOMContentLoaded", start);
 
         let personerne = [];
         let filter = "alle";
@@ -114,6 +114,9 @@
         async function start() {
             const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
             personerne = await json.json();
+            personerne.sort((a, b) => {
+                return (a.alder - b.alder);
+            });
             vispersonerene();
         }
 
