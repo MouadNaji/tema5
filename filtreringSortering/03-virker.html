@@ -31,6 +31,14 @@
 
         }
 
+        .filter {
+            justify-content: center;
+        }
+
+        .valgt {
+            background-color: red;
+        }
+
         @media only screen and (min-width: 500px) {
             .d {
                 display: grid;
@@ -76,12 +84,23 @@
 </head>
 
 <body>
-    <div class="d"></div>
+
+    <button class="filter valgt" data-hold="alle">
+        alle
+    </button>
+    <button class="filter" data-hold="a">
+        hold A
+    </button>
+    <button class="filter" data-hold="b">
+        hold B
+    </button>
+    <div class="liste"></div>
     <script>
         document.addEventListener("DOMContentLoaded", start)
 
         let personerne = [];
-        let filter = "b";
+        let filter = "alle";
+
         async function start() {
             const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
             personerne = await json.json();
@@ -89,13 +108,24 @@
         }
 
         function vispersonerene() {
-            let div = document.querySelector("div");
-
+            let dest = document.querySelector(".liste");
+            dest.innerHTML = "";
             personerne.forEach(person => {
-                if (person.hold == filter) {
-                    div.innerHTML += `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p></div>`
+                if (filter == "alle" || person.hold == filter) {
+                    dest.innerHTML += `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p></div>`
                 }
+
             })
+        }
+
+        document.querySelectorAll(".filter").forEach(knap => {
+            knap.addEventListener("click", filtrering);
+        })
+
+        function filtrering() {
+            filter = this.getAttribute("data-hold");
+            console.log(filter);
+            vispersonerene();
         }
     </script>
 </body>

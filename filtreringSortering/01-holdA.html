@@ -31,6 +31,8 @@
 
         }
 
+        .filter {}
+
         @media only screen and (min-width: 500px) {
             .d {
                 display: grid;
@@ -76,12 +78,24 @@
 </head>
 
 <body>
+    <button class="filter" data-hold="alle">
+        alle
+    </button>
+    <button class="filter" data-hold="hold-a">
+        hold a
+    </button>
+    <button class="filter" data-hold="hold.b">
+        hold b
+    </button>
     <div class="d"></div>
     <script>
         document.addEventListener("DOMContentLoaded", start)
 
         let personerne = [];
         let filter = "b";
+        let alle = document.querySelector("#alle");
+        let a = document.querySelector("#a");
+        let b = document.querySelector("b")
         async function start() {
             const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
             personerne = await json.json();
@@ -95,6 +109,8 @@
                 if (person.hold == filter) {
                     div.innerHTML += `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p></div>`
                 }
+
+
             })
         }
     </script>
