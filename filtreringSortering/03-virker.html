@@ -14,7 +14,7 @@
             width: 90vw;
         }
 
-        .d {
+        .liste {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 1vw;
@@ -39,8 +39,16 @@
             background-color: red;
         }
 
+        .menu {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
         @media only screen and (min-width: 500px) {
-            .d {
+            .liste {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-gap: 1vw;
@@ -62,7 +70,7 @@
         }
 
         @media only screen and (min-width: 1200px) {
-            .d {
+            .liste {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 1vw;
@@ -84,16 +92,18 @@
 </head>
 
 <body>
-
-    <button class="filter valgt" data-hold="alle">
-        alle
-    </button>
-    <button class="filter" data-hold="a">
-        hold A
-    </button>
-    <button class="filter" data-hold="b">
-        hold B
-    </button>
+    <h1>Alle</h1>
+    <div class="menu">
+        <button class="filter valgt" data-hold="alle">
+            Alle
+        </button>
+        <button class="filter" data-hold="a">
+            Hold A
+        </button>
+        <button class="filter" data-hold="b">
+            Hold B
+        </button>
+    </div>
     <div class="liste"></div>
     <script>
         document.addEventListener("DOMContentLoaded", start)
@@ -123,6 +133,7 @@
         })
 
         function filtrering() {
+            document.querySelector("h1").textContent = this.textContent;
             filter = this.getAttribute("data-hold");
             console.log(filter);
             vispersonerene();
