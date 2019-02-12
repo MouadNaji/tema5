@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .minedyr {
+            border: 30vw;
+            margin: 3vw;
+            border: solid;
+            width: 90vw;
+        }
+
+        .liste {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1vw;
+
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #dy {
+            height: 50vw;
+            width: 50vw;
+
+        }
+
+        .filter {
+            justify-content: center;
+        }
+
+        .valgt {
+            background-color: red;
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #pop-op {
+            top: 0;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background: hsla(0, 15%, 40%, 50%);
+            display: none;
+
+
+
+        }
+
+        #luk {
+            position: absolute;
+            height: 5vw;
+            width: 6vw;
+            background-color: black;
+            top: 4.3vw;
+            left: 79vw;
+        }
+
+        #indhold {
+            min-height: 50vw;
+            background-color: aliceblue;
+            width: 70vw;
+            margin: 4rem auto;
+            overflow: scroll;
+
+        }
+
+        #lukknap {
+            font-size: 4vw;
+            text-align: center;
+            width: 6vw;
+            height: 5vw;
+            cursor: pointer;
+
+        }
+
+
+        @media only screen and (min-width: 500px) {
+            .liste {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1vw;
+                margin: 0
+            }
+
+            #dy {
+                height: 30vw;
+                width: 30vw;
+                align-self: center;
+            }
+
+            .minedyr {
+                margin: 0;
+                width: 45vw;
+            }
+
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .liste {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1vw;
+                margin: 0;
+            }
+
+            .minedyr {
+                margin: 0;
+                width: 31vw;
+            }
+
+            #dy {
+                height: 20vw;
+                width: 20vw;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pop-op">
+        <div id="luk"><button id="lukknap">x</button></div>
+        <div id="indhold"></div>
+    </div>
+    <h1>Alle</h1>
+    <div class="menu">
+        <button class="filter valgt" data-hold="alle">
+            Alle
+        </button>
+        <button class="filter" data-hold="a">
+            Hold A
+        </button>
+        <button class="filter" data-hold="b">
+            Hold B
+        </button>
+    </div>
+    <div class="liste"></div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let personerne = [];
+        let filter = "alle";
+
+        async function start() {
+            const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+            personerne = await json.json();
+            personerne.sort((a, b) => {
+                return (a.alder - b.alder);
+            });
+            /*personerne.sort((a, b) => {
+                return a.navn.localeCompare(b.navn);
+
+            });*/
+            vispersonerene();
+        };
+
+        function vispersonerene() {
+            let dest = document.querySelector(".liste");
+            dest.innerHTML = "";
+            personerne.forEach(person => {
+                if (filter == "alle" || person.hold == filter) {
+                    let template = `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p><p>Alder ${person.alder}</p></div>`;
+                    dest.insertAdjacentHTML("beforeend", template);
+                    dest.lastElementChild.addEventListener("click", visSingle);
+                    dest.lastElementChild.addEventListener("click", () => {
+                        visSingle(person);
+                    });
+                }
+            })
+        };
+
+
+
+        function visSingle(person) {
+            document.querySelector("#pop-op").style.display = "block";
+            document.querySelector("#pop-op #lukknap").addEventListener("click", close);
+
+            document.querySelector("#indhold").innerHTML = `<div class="detail"><h2>Navn: ${person.navn}</h2><img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p><p>Alder ${person.alder}</p></div>`;
+        };
+
+        function close() {
+            document.querySelector("#pop-op").style.display = "none";
+        };
+
+
+        document.querySelectorAll(".filter").forEach(knap => {
+
+            knap.addEventListener("click", filtrering);
+        });
+
+
+        function filtrering() {
+            document.querySelectorAll(".filter").forEach(knap => {
+                knap.classList.remove("valgt");
+            });
+            this.classList.add("valgt");
+            document.querySelector("h1").textContent = this.textContent;
+            filter = this.getAttribute("data-hold");
+            console.log(filter);
+            vispersonerene();
+        };
+    </script>
+</body>
+
+</html>
