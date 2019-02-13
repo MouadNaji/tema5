@@ -63,32 +63,7 @@
 
         }
 
-        #luk {
-            position: absolute;
-            height: 5vw;
-            width: 6vw;
-            background-color: black;
-            top: 4.3vw;
-            left: 79vw;
-        }
 
-        #indhold {
-            min-height: 50vw;
-            background-color: aliceblue;
-            width: 70vw;
-            margin: 4rem auto;
-            overflow: scroll;
-
-        }
-
-        #lukknap {
-            font-size: 4vw;
-            text-align: center;
-            width: 6vw;
-            height: 5vw;
-            cursor: pointer;
-
-        }
 
 
         @media only screen and (min-width: 500px) {
@@ -136,10 +111,6 @@
 </head>
 
 <body>
-    <div id="pop-op">
-        <div id="luk"><button id="lukknap">x</button></div>
-        <div id="indhold"></div>
-    </div>
     <h1>Alle</h1>
     <div class="menu">
         <button class="filter valgt" data-hold="alle">
@@ -181,10 +152,10 @@
                 if (filter == "alle" || person.hold == filter) {
                     let template = `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p><p>Alder ${person.alder}</p></div>`;
                     dest.insertAdjacentHTML("beforeend", template);
-                    dest.lastElementChild.addEventListener("click", visSingle);
-                    dest.lastElementChild.addEventListener("click", () => {
-                        visSingle(person);
-                    });
+                    dest.lastElementChild.addEventListener("click".() => {
+                        location.href = "06-single.html?github=kvikea=" + person.github;
+                    })
+
                 }
             })
         };

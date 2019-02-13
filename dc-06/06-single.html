@@ -133,8 +133,8 @@
 </head>
 
 <body>
-    <div id="pop-op">
-        <div id="luk"><button id="lukknap">x</button></div>
+    <div id="single">
+        <div id="tilbage"><button id="lukknap">x</button></div>
         <div id="indhold"></div>
     </div>
     <h1>Alle</h1>
@@ -153,6 +153,8 @@
 
 
     <script>
+        let urlParams = new URLSearchParams(window.location.search)
+        let github = urlParams.get("github");
         document.addEventListener("DOMContentLoaded", start);
 
         let personerne = [];
@@ -172,49 +174,15 @@
         };
 
         function vispersonerene() {
-            let dest = document.querySelector(".liste");
+            let dest = document.querySelector(".indhold");
             dest.innerHTML = "";
             personerne.forEach(person => {
-                if (filter == "alle" || person.hold == filter) {
+                if (github == person.github) {
                     let template = `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p><p>Alder ${person.alder}</p></div>`;
                     dest.insertAdjacentHTML("beforeend", template);
-                    dest.lastElementChild.addEventListener("click", visSingle);
-                    dest.lastElementChild.addEventListener("click", () => {
-                        visSingle(person);
-                    });
+
                 }
             })
-        };
-
-
-
-        function visSingle(person) {
-            document.querySelector("#pop-op").style.display = "block";
-            document.querySelector("#pop-op #lukknap").addEventListener("click", close);
-
-            document.querySelector("#indhold").innerHTML = `<div class="detail"><h2>Navn: ${person.navn}</h2><img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p><p>Alder ${person.alder}</p></div>`;
-        };
-
-        function close() {
-            document.querySelector("#pop-op").style.display = "none";
-        };
-
-
-        document.querySelectorAll(".filter").forEach(knap => {
-
-            knap.addEventListener("click", filtrering);
-        });
-
-
-        function filtrering() {
-            document.querySelectorAll(".filter").forEach(knap => {
-                knap.classList.remove("valgt");
-            });
-            this.classList.add("valgt");
-            document.querySelector("h1").textContent = this.textContent;
-            filter = this.getAttribute("data-hold");
-            console.log(filter);
-            vispersonerene();
         };
     </script>
 </body>
