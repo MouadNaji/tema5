@@ -1,3 +1,3 @@
 # tema5
-http://mouad.dk/kea2semester/babushka-pop-op/
-
+pop-op udgave:  http://mouad.dk/kea2semester/babushka-pop-op/
+Ny side udgave: http://mouad.dk/kea2semester/babushka-nyside/babushka-kald.html
