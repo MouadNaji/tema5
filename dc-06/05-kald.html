@@ -26,7 +26,7 @@
         }
 
         h2 {
-            text-align: center;
+            text-align: center
         }
 
         #dy {
@@ -60,10 +60,32 @@
             display: none;
 
 
+        }
+
+        #luk {
+            position: absolute;
+            height: 5vw;
+            width: 6vw;
+            background-color: black;
+            top: 4.3vw;
+            left: 90vw;
+        }
+
+        #indhold {
+            min-height: 50vw;
+            background-color: aliceblue;
+            width: 70vw;
+            margin: 4rem auto;
 
         }
 
+        #lukknap {
+            font-size: 4vw;
+            text-align: center;
+            width: 6vw;
+            height: 5vw;
 
+        }
 
 
         @media only screen and (min-width: 500px) {
@@ -111,6 +133,10 @@
 </head>
 
 <body>
+    <div id="pop-op">
+        <div id="luk"><button id="lukknap">x</button></div>
+        <div id="indhold"></div>
+    </div>
     <h1>Alle</h1>
     <div class="menu">
         <button class="filter valgt" data-hold="alle">
@@ -135,15 +161,9 @@
         async function start() {
             const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
             personerne = await json.json();
-            personerne.sort((a, b) => {
-                return (a.alder - b.alder);
-            });
-            /*personerne.sort((a, b) => {
-                return a.navn.localeCompare(b.navn);
 
-            });*/
             vispersonerene();
-        };
+        }
 
         function vispersonerene() {
             let dest = document.querySelector(".liste");
@@ -152,32 +172,25 @@
                 if (filter == "alle" || person.hold == filter) {
                     let template = `<div class="minedyr"><h2>Navn: ${person.navn}</h2> <img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p><p>Alder ${person.alder}</p></div>`;
                     dest.insertAdjacentHTML("beforeend", template);
-                    dest.lastElementChild.addEventListener("click".() => {
-                        location.href = "06-single.html?github=kvikea=" + person.github;
+                    dest.lastElementChild.addEventListener("click", () => {
+                        location.href = "06-single.html?github=" + person.github;
+
+
+
+
+
                     })
 
                 }
+
             })
-        };
-
-
-
-        function visSingle(person) {
-            document.querySelector("#pop-op").style.display = "block";
-            document.querySelector("#pop-op #lukknap").addEventListener("click", close);
-
-            document.querySelector("#indhold").innerHTML = `<div class="detail"><h2>Navn: ${person.navn}</h2><img id="dy" src=${person.billede} alt="dyr"> <br>github:<a href="https://github.com/${person.github}">${person.github}</a><br> <p>Hold: ${person.hold}</p><p>Alder ${person.alder}</p></div>`;
-        };
-
-        function close() {
-            document.querySelector("#pop-op").style.display = "none";
-        };
+        }
 
 
         document.querySelectorAll(".filter").forEach(knap => {
 
             knap.addEventListener("click", filtrering);
-        });
+        })
 
 
         function filtrering() {
@@ -189,7 +202,7 @@
             filter = this.getAttribute("data-hold");
             console.log(filter);
             vispersonerene();
-        };
+        }
     </script>
 </body>
 

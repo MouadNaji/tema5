@@ -110,17 +110,16 @@
             background-color: #c4aeae;
         }
 
-        #pop-op {
+        #single {
             top: 0;
             position: fixed;
             height: 100%;
             width: 100%;
             background: hsla(0, 15%, 50%, 70%);
-            display: none;
             overflow: scroll;
         }
 
-        #luk {
+        #tilbage {
             position: relative;
             top: 11.4%;
             left: 96%;
@@ -140,7 +139,7 @@
 
         }
 
-        #lukknap {
+        #tilbageknap {
             width: 5vw;
             height: 5vw;
             cursor: pointer;
@@ -150,111 +149,6 @@
 
         }
 
-
-        @media only screen and (min-width: 600px) {
-            #liste {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-            #billede {
-                height: 30vw;
-                width: 40vw;
-
-            }
-
-            .mineretter {
-                margin: 0.5vw;
-                width: 40vw;
-
-            }
-
-            .filter {
-                width: 15vw;
-                height: 5vw;
-                border-radius: 2vw;
-                font-size: 2vw;
-                font-feature-settings: bold;
-                margin: 1vw;
-            }
-
-            #overskrift {
-                font-size: 3vw;
-            }
-
-
-        }
-
-        @media only screen and (min-width: 1200px) {
-            #liste {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-
-            }
-
-            #billede {
-                height: 15vw;
-                width: 20vw;
-
-            }
-
-            .mineretter {
-                width: 20vw;
-
-            }
-
-            #storbillede {
-                height: auto;
-                width: 60vw;
-                align-content: center;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 2vw;
-            }
-
-            #indhold {
-                min-height: 50vw;
-                background-color: aliceblue;
-                width: 60vw;
-                margin: 4rem auto;
-                overflow: scroll;
-                border-radius: 2vw;
-                background-color: #bececb;
-
-            }
-
-            .filter {
-                width: 10vw;
-                height: 3vw;
-                border-radius: 2vw;
-                font-size: 1vw;
-                font-feature-settings: bold;
-                margin: 1vw;
-            }
-
-            h1 {
-                font-family: cursive;
-                margin: 0 20vw;
-                ;
-                padding: inherit;
-                padding: 1vw 02vw;
-
-
-            }
-
-            #liste {
-                margin: 0 20vw;
-            }
-
-            #overskrift {
-                font-size: 3vw;
-            }
-
-
-
-        }
     </style>
 
 </head>
@@ -265,38 +159,16 @@
     <header id="head">
         <div id="overskrift">BABUSHKA</div>
     </header>
-    <div id="pop-op">
-        <div id="luk"><button id="lukknap"></button></div>
+    <div id="single">
+        <div id="tilbage"><button id="tilbageknap"></button></div>
         <div id="indhold">
-
-
         </div>
     </div>
-    <div class="menu">
-        <button class="filter valgt" data-hold="alle">
-            Alle
-        </button>
-        <button class="filter" data-hold="forretter">
-            Forretter
-        </button>
-        <button class="filter" data-hold="hovedretter">
-            Hovedretter
-        </button>
-        <button class="filter" data-hold="desserter">
-            Desserter
-        </button>
-        <button class="filter" data-hold="drikkevarer">
-            Drikkevarer
-        </button>
-        <button class="filter" data-hold="sideorders">
-            Sideorders
-        </button>
-    </div>
-    <h1>Alle</h1>
-    <div id="beholder">
-        <div id="liste"></div>
-    </div>
+
     <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+
         document.addEventListener("DOMContentLoaded", start)
 
 
@@ -320,30 +192,22 @@
 
 
         function visRetterne() {
-            let liste = document.querySelector("#liste");
+            let liste = document.querySelector("#indhold");
             liste.innerHTML = "";
 
             retter.forEach(ret => {
-                if (filter == "alle" || ret.kategori == filter) {
-                    let template = `<div class="mineretter"><img id="billede" src=imgs/small/${ret.billede}-sm.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p>Pris: ${ret.pris}</p></div>`
+                if (id == ret.id) {
+                    let template = `<img id="storbillede" src=imgs/large/${ret.billede}.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.lang}</p><p>Pris: ${ret.pris}</p>`
                     liste.insertAdjacentHTML("beforeend", template);
-                    liste.lastElementChild.addEventListener("click", visSingle);
-                    liste.lastElementChild.addEventListener("click", () => {
-                        visSingle(person);
-                    });
 
-                    function visSingle(person) {
-                        document.querySelector("#pop-op").style.display = "block";
-                        document.querySelector("#pop-op #lukknap").addEventListener("click", close);
 
-                        document.querySelector("#indhold").innerHTML = `<img id="storbillede" src=imgs/large/${ret.billede}.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.lang}</p><p>Pris: ${ret.pris}</p>`;
-                        start();
-                    };
 
                 }
 
             })
-
+            document.querySelector("#tilbage #tilbageknap").addEventListener("click", () => {
+                location.href = "babushka-kald.html"
+            });
         };
 
         function close() {
@@ -370,6 +234,7 @@
             console.log(filter);
             visRetterne();
         }
+
     </script>
 
 </body>

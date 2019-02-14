@@ -265,13 +265,6 @@
     <header id="head">
         <div id="overskrift">BABUSHKA</div>
     </header>
-    <div id="pop-op">
-        <div id="luk"><button id="lukknap"></button></div>
-        <div id="indhold">
-
-
-        </div>
-    </div>
     <div class="menu">
         <button class="filter valgt" data-hold="alle">
             Alle
@@ -327,28 +320,17 @@
                 if (filter == "alle" || ret.kategori == filter) {
                     let template = `<div class="mineretter"><img id="billede" src=imgs/small/${ret.billede}-sm.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p>Pris: ${ret.pris}</p></div>`
                     liste.insertAdjacentHTML("beforeend", template);
-                    liste.lastElementChild.addEventListener("click", visSingle);
+
                     liste.lastElementChild.addEventListener("click", () => {
-                        visSingle(person);
-                    });
+                        location.href = "babushka-single.html?id=" + ret.id;
 
-                    function visSingle(person) {
-                        document.querySelector("#pop-op").style.display = "block";
-                        document.querySelector("#pop-op #lukknap").addEventListener("click", close);
-
-                        document.querySelector("#indhold").innerHTML = `<img id="storbillede" src=imgs/large/${ret.billede}.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.lang}</p><p>Pris: ${ret.pris}</p>`;
-                        start();
-                    };
-
+                    })
                 }
 
             })
 
         };
 
-        function close() {
-            document.querySelector("#pop-op").style.display = "none";
-        };
 
 
 
