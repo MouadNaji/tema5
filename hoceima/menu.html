@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="da">
+
+<html lang="">
+
+
+
 <head>
+
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>menu</title>
+
+    <link rel="stylesheet" href="">
+
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Roboto|Spirax');
+        @import url('https://fonts.googleapis.com/css?family=BioRhyme|Roboto');
 
         body {
             margin: 0;
             padding: 0;
             min-height: calc(100% - 100px);
             position: relative;
-            padding-bottom: 200px;
         }
 
         html {
@@ -38,7 +47,7 @@
         nav {
             position: absolute;
             text-align: left;
-            top: 100%;
+            top: 95%;
             left: 0;
             background: #7F5D0D;
             width: 100%;
@@ -67,10 +76,15 @@
         nav a {
             color: #CC8F00;
             text-decoration: none;
-            font-family: spirax;
+            font-family: BioRhyme;
             font-size: 8vw;
             text-transform: uppercase;
         }
+
+        .mineretter {
+            font-family: bioRhyme;
+        }
+
 
         nav a:hover {
             color: #7A0F99;
@@ -100,13 +114,40 @@
             transition: opacity 200ms ease-in-out 250ms;
         }
 
+        container {
+            position: absolute;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            top: 15vw;
+            margin: 0;
+            padding: 0;
+        }
 
+        #billede {
+            width: 100%;
+            background-repeat: no-repeat;
+            grid-column: 1/3;
+            max-width: 100%;
+        }
 
+        #text {
+            grid-column: 1/4;
+            color: black;
+            font-size: 5vw;
+            text-align: justify;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-bottom: 25vw;
 
+        }
 
-
-
-
+        #overskrift {
+            grid-column: 1/4;
+            margin: 0;
+            color: #7A0F99;
+            text-align: center;
+            font-family: spirax;
+        }
 
         p {
             font-family: roboto;
@@ -118,7 +159,7 @@
         }
 
         h3 {
-            font-family: roboto;
+            font-family: BioRhyme;
         }
 
         h4 {
@@ -127,16 +168,17 @@
 
         #text h3 {
             border-bottom: solid #7A0F99;
+            font-family: BioRhyme;
         }
 
         footer {
             background-color: #7F5D0D;
             width: 100%;
-            height: 100px;
-            position: absolute;
-            bottom: 0;
+            height: 82px;
+            position: fixed;
             left: 0;
-            right: 0;
+            bottom: 0;
+            width: 100%;
         }
 
         #h {
@@ -156,13 +198,48 @@
 
 
         @media screen and (min-width: 600px) {
+
+            nav li {
+                margin: 0 1.9vw;
+
+            }
+
             #h {
                 height: 2vw;
                 margin-right: 1vw;
             }
 
+            #billede {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            #text {
+                grid-column: 2/3;
+                grid-row: 2/3;
+                font-size: 1.9vw;
+                padding-top: 0vw;
+                padding-left: 2vw;
+                padding-right: 2vw;
+
+            }
+
+            #text h3 {
+                padding: 0;
+                margin: 0;
+            }
+
+            footer {
+                height: 100px;
+            }
 
 
+            #overskrift {
+                grid-row: 1/2;
+                grid-column: 1/4;
+                margin-bottom: 2vw;
+
+            }
 
             #burgermenu {
                 display: none;
@@ -197,33 +274,51 @@
                 justify-content: flex-start;
             }
 
-            nav li {
-                margin: 0 3vw;
-            }
 
             nav a {
-                font-size: 3vw;
+                font-size: 2.8vw;
+                text-align: center;
             }
         }
 
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 1000px) {
+            nav li {
+                margin: 0 4vw;
+
+            }
+
             header {
-                height: 10vw;
+                height: 5vw;
+                padding-bottom: 0;
             }
 
             #logo {
                 padding: 0;
-                height: 10vw;
+                height: 5vw;
             }
 
-            nav {
-                padding: 0 10vw;
-            }
+
 
             nav a {
                 font-size: 2vw;
             }
 
+            #text {
+                font-size: 1vw;
+                padding-left: 10vw;
+                padding-right: 10vw;
+                padding-top: 9vw;
+            }
+
+            container {
+                position: absolute;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                top: 5vw;
+                margin: 0;
+                padding: 0;
+                padding-top: 0vw;
+            }
 
             #f {
                 display: grid;
@@ -231,7 +326,7 @@
             }
 
             footer {
-                height: 60px;
+                height: 40px;
             }
 
             #h {
@@ -239,9 +334,231 @@
                 margin-right: 1vw;
             }
 
+
+        }
+
+        body {
+            margin: 0;
+            background-color: antiquewhite;
+
+        }
+
+        #overskrift {
+            text-align: center;
+            background-color: #c4aeae;
+            font-family: monospace;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            width: 40vw;
+
+        }
+
+        .mineretter {
+            margin: 0.5vw;
+            width: 100vw;
+            background-color: #7F5D0D;
+            border-bottom-left-radius: 2vw;
+
+
+        }
+
+        .mineretter:nth-child(23) {
+            margin-bottom: 25vw;
+        }
+
+        .mineretter:nth-child(odd) {
+            background-color: #64067F;
+
+        }
+
+        #billede {
+            height: 70vw;
+            width: 100vw;
+
+        }
+
+        #storbillede {
+            height: auto;
+            width: 100vw;
+            align-content: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 2vw;
+        }
+
+        #beholder {
+            text-align: center;
+        }
+
+
+        .menu {
+            text-align: center;
+        }
+
+        .filter {
+            width: 20vw;
+            height: 8vw;
+            border-radius: 2vw;
+            font-size: 3vw;
+            font-feature-settings: bold;
+            margin: 1vw;
+            background-color: #7F5D0D;
+            margin-top: 20vw
+        }
+
+        .valgt {
+            background-color: #64067F;
+        }
+
+        #pop-op {
+            top: 0;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background: hsla(0, 15%, 50%, 70%);
+            display: none;
+            overflow: scroll;
+        }
+
+        #luk {
+            position: relative;
+            top: 11.4%;
+            left: 96%;
+            border-radius: 2vw;
+            ;
+
+        }
+
+        #indhold {
+            min-height: 50vw;
+            background-color: aliceblue;
+            width: 100vw;
+            margin: 4rem auto;
+            overflow: scroll;
+            border-radius: 2vw;
+            background-color: #bececb;
+
+        }
+
+        #lukknap {
+            width: 5vw;
+            height: 5vw;
+            cursor: pointer;
+            text-align: center;
+            background-color: red;
+            border-radius: 2vw;
+
+        }
+
+
+        @media only screen and (min-width: 600px) {
+            #liste {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            #billede {
+                height: 30vw;
+                width: 40vw;
+
+            }
+
+            .mineretter {
+                margin: 0.5vw;
+                width: 40vw;
+
+            }
+
+            .filter {
+                width: 15vw;
+                height: 5vw;
+                border-radius: 2vw;
+                font-size: 2vw;
+                font-feature-settings: bold;
+                margin: 1vw;
+            }
+
+            #overskrift {
+                font-size: 3vw;
+            }
+
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            #liste {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+
+            #billede {
+                height: 15vw;
+                width: 20vw;
+
+            }
+
+            .mineretter {
+                width: 20vw;
+
+            }
+
+            #storbillede {
+                height: auto;
+                width: 60vw;
+                align-content: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 2vw;
+            }
+
+            #indhold {
+                min-height: 50vw;
+                background-color: aliceblue;
+                width: 60vw;
+                margin: 4rem auto;
+                overflow: scroll;
+                border-radius: 2vw;
+                background-color: #bececb;
+
+            }
+
+            .filter {
+                width: 10vw;
+                height: 3vw;
+                border-radius: 2vw;
+                font-size: 1vw;
+                font-feature-settings: bold;
+                margin-top: 6vw;
+            }
+
+
+            #liste {
+                margin: 0 20vw;
+            }
+
+            #overskrift {
+                font-size: 3vw;
+            }
+
+            .mineretter:nth-child(23) {
+                margin-bottom: 2.5vw;
+            }
+
+
+
         }
     </style>
+
 </head>
+
+
 
 <body>
     <header>
@@ -252,18 +569,35 @@
                 <li><a href="#">menu</a></li>
                 <li><a href="#">lokation</a></li>
                 <li><a href="#">om os</a></li>
-                <li><a href="#">galleri</a></li>
+                <li><a href="#">åbningstider</a></li>
             </ul>
         </nav>
     </header>
+    <div id="pop-op">
+        <div id="luk"><button id="lukknap"></button></div>
+        <div id="indhold">
 
 
-
-
-
-
-
-
+        </div>
+    </div>
+    <div class="menu">
+        <button class="filter valgt" data-hold="alle">
+            Alle
+        </button>
+        <button class="filter" data-hold="forretter">
+            Forretter
+        </button>
+        <button class="filter" data-hold="hovedretter">
+            Hovedretter
+        </button>
+        <button class="filter" data-hold="drikkevarer">
+            Drikkevarer
+        </button>
+    </div>
+    <h1>Alle</h1>
+    <div id="beholder">
+        <div id="liste"></div>
+    </div>
     <footer>
         <div>
             <row>
@@ -277,6 +611,295 @@
         </div>
     </footer>
     <script>
+        document.addEventListener("DOMContentLoaded", visRetterne)
+
+
+        let retter = [];
+        let filter = "alle";
+        const rett = [{
+                id: 10,
+                kategori: "Hovedretter",
+                navn: "Kyllinge tajine",
+                pris: 99,
+                kort: "Kylling tilberedt i en tajine, marokansk brød følger med",
+                lang: "Russisk ringbrød efter en klassisk opskrift fra Karapatien. Dejen blandes koldhæver 30 dage, inde brødet bages over bål. Meget sprødt, godt med Karapatisk bjerggedsmør.",
+                oprindelse: "Karapatien",
+                billede: "billede1"
+            },
+            {
+                id: 12,
+                kategori: "Hovedretter",
+                navn: "Hakket kød tajine",
+                pris: 99,
+                kort: "Hakket kød tilberedt i en tajine, marokansk brød følger med",
+                lang: "Cabanossi med rødbedecreme og creme er egentlig en forret, men kammerat Vladimir elskede denne ret så højt, at han forbød restauranter i Krigien at sælge det som andet end en hovedret. Vi anbefaler det dog som forret, inden en god Bortsjs. Skylles helst ned med vodka.",
+                oprindelse: "Krigien",
+                billede: "billede2"
+            },
+            {
+                id: 14,
+                kategori: "Hovedretter",
+                navn: "Kalvekød tajine",
+                pris: 99,
+                kort: "Kalvekød tilberedt i en tajine, marokansk brød følger med",
+                lang: "Til denne dejlige Bruschetta anvender vi kun de dejligste sibiriske Caviar. Caviarerne presses ud af fiskene mens de stadig er levende, og vædes derefter i Putinka Vodka. Der er masser af bjerggedesmør på bruschettaene.",
+                oprindelse: "Sibirien",
+                billede: "billede3"
+            },
+            {
+                id: 17,
+                kategori: "Hovedretter",
+                navn: "Lammekøds tajine",
+                pris: 99,
+                kort: " lammekød tilberedt i en tajine, marokansk brød følger med",
+                lang: "Baltisk bondesuppe er en solid starter. Godt til dig, der skal drikke godt igennem under måltidet. Suppen består af ged, grønt og masser af løg.",
+                oprindelse: "Baltikum",
+                billede: "billede4"
+            },
+            {
+                id: 19,
+                kategori: "Hovedretter",
+                navn: "Laks i ovenen",
+                pris: 99,
+                kort: "laks tilberedt i ovnen, brød følger med",
+                lang: "Denne lækre suppe består af 7 forskellige slags kål: Hvidkål, grønkål, brunkål, spidskål, kabanossikål, sibirisk kål og kålrabi. Dertil en masse Voda (vand) og krydderier fra Østsibirien.",
+                oprindelse: "Østsibirien",
+                billede: "billede5"
+            },
+            {
+                id: 2,
+                kategori: "hovedretter",
+                navn: "Grøntsags koskos",
+                pris: 75,
+                kort: "koskos med grøntsager",
+                lang: "Da Caucesku var i færd med at skrive sit navn med højhuse, var han nødt til at give håndværkerne solid kost, så de kunne arbejde 18 timer i døgnet, 7 dage om ugen: Bulgarsk bondesuppe. Suppen består af alt det bedste fra Bulgarien.",
+                oprindelse: "Bulgarien",
+                billede: "billede6"
+            },
+            {
+                id: 21,
+                kategori: "hovedretter",
+                navn: "Kyllinge koskos",
+                pris: 75,
+                kort: "kylling med koskos og grøntsager",
+                lang: "Kæmpe klipfiskene i det nordlige Novogorod har længe været kendt for at levere de bedste rogn. Her sereveres de med eis-kartofler og en lækker sovs baseret på fiskefond.",
+                oprindelse: "Novogorod",
+                billede: "billede7"
+            },
+            {
+                id: 25,
+                kategori: "hovedretter",
+                navn: "Lammkøds koskos",
+                pris: 85,
+                kort: "lammekød med koskos og grøntsager",
+                lang: "Diplomatiet har haft mange udfordringer i USSR. Derfor blev der sørget godt for dem, og som nogen af de få, fik diplomaterne mange bøffer under den kolde krig. Diplomat-bøffen med grillede grøntsager og koldpresset olie er af ypperste kvalitet - kødet kommer fra udsultede ungkalve i Viktoriagrad.",
+                oprindelse: "Viktoriagrad",
+                billede: "billede8"
+            },
+            {
+                id: 34,
+                kategori: "hovedretter",
+                navn: "Oksekøds koskos",
+                pris: 85,
+                kort: "oksekøds med koskos og grøntsager",
+                lang: "Under de trange vilkår på landet Sibirien, bød husmændene på Zygroffs bondeplatte, når der var fest. Gode, grove grøntsager, tørret bøffelkod og masser af æg. Specielt for bondeplatten blev de dejlige caviar skiftet ud med billige kapers.",
+                oprindelse: "Sibirien",
+                billede: "billede9"
+            },
+            {
+                id: 36,
+                kategori: "hovedretter",
+                navn: "Fiske tajine",
+                pris: 99,
+                kort: "fisk tilberedt i en tajine, marokansk brød følger med",
+                lang: "Der er blevet sagt meget om det russiske køkken, men godt har sjældent været et af tillægsordene. Russisk tapas er dog lækkert. Inspireret af duften af Italien får du her tørret bøffelkød, hvidt brød og tomater badet i koldpresset olie.",
+                oprindelse: "Rusland",
+                billede: "billede10"
+            },
+            {
+                id: 38,
+                kategori: "hovedretter",
+                navn: "Oksekøds ret ",
+                pris: 139,
+                kort: "oksekød med grøntsager og brød følger med",
+                lang: "Denne suppe fra Moldavien er unik ved at være forholdsvis stærk. Suppen koges på basis af Zyganoff Vodka i 24 timer. Meget af alkoholen damper væk, men der er typisk en rest på ca. 8% alkohol tilbage, så spiser du godt med suppe, skal du nok blive bims.",
+                oprindelse: "Moldavien",
+                billede: "billede11"
+            },
+            {
+                id: 41,
+                kategori: "forretter",
+                navn: "harira",
+                pris: 65,
+                kort: "marokansk suppe",
+                lang: "Dynrup - Russisk bulgur med skovsvampe fra det østlige Kirgisistan. Svampene minder om kantarelle, men med en mere støvet smag.",
+                oprindelse: "Rusland",
+                billede: "billede12"
+            },
+            {
+                id: 42,
+                kategori: "forretter",
+                navn: "msemen",
+                pris: 45,
+                kort: "marokansk pandekage, serveres med honning",
+                lang: "Brændte pandekager med Bordyriske ørne-kaviar. Ørne laver kaviar på størrelse med peberkorn. Og de smager af kaviar. Ikke peber. Lækkert.",
+                oprindelse: "Bordurien",
+                billede: "billede13"
+            },
+            {
+                id: 43,
+                kategori: "forretter",
+                navn: "grifa",
+                pris: 45,
+                kort: "marokansk pandekage serveres med marmelade",
+                lang: "Guzni - den verdenskendte rødbede/nøddeis fra Petrograd. Kammerat Boris Guzni var stor fan af den, og spiste den hver dag under Den kolde krig.",
+                oprindelse: "Petrograd",
+                billede: "billede14"
+            },
+            {
+                id: 44,
+                kategori: "deserter",
+                navn: "helva",
+                pris: 45,
+                kort: "kage",
+                lang: "I det nordlige Kirgisistan består en væsentlig del af kostpyramiden af forskellige kålvarianter og nødder. Mama Dushku fandt på denne ret, som en hyldest til det røde flag med hammer og segl.",
+                oprindelse: "Kirgisistan",
+                billede: "billede15"
+            },
+            {
+                id: 45,
+                kategori: "deserter ",
+                navn: "helva1",
+                pris: 45,
+                kort: "kage",
+                lang: "Pavlova - de berømte festlige russiske pandekager - serveres i lækker honningmelon fra Nordkorea",
+                oprindelse: "Nordkorea",
+                billede: "billede16"
+            },
+            {
+                id: 52,
+                kategori: "desserter",
+                navn: "helva2",
+                pris: 45,
+                kort: "kage",
+                lang: "Groggishorn - det russiske svar på pølsehorn, bare meget mere rustikt og spændende",
+                oprindelse: "Rusland",
+                billede: "billede17"
+            },
+            {
+                id: 54,
+                kategori: "desserter",
+                navn: "helva3",
+                pris: 45,
+                kort: "kage",
+                lang: "Et lækkert festfyrværkeri af festlige søde, vodkasyltede løg",
+                oprindelse: "Moskva",
+                billede: "billede18"
+            },
+            {
+                id: 55,
+                kategori: "drikkevarer",
+                navn: "Nana",
+                pris: 35,
+                kort: "marokansk mønte te",
+                lang: "En halv liter Bochkarev fadøl. Skåll!",
+                oprindelse: "Skt Petersburg",
+                billede: "billede19"
+            },
+            {
+                id: 60,
+                kategori: "drikkevarer",
+                navn: "Hawai",
+                pris: 35,
+                kort: "hawai",
+                lang: "Voda-vodka - vodka i rigelige mængder, dugklar og god.",
+                oprindelse: "Sibirien",
+                billede: "billede20"
+            },
+            {
+                id: 62,
+                kategori: "drikkevarer",
+                navn: "Kaffe",
+                pris: 35,
+                kort: "sort kaffe, med mælk ved siden af",
+                lang: "Gloske - russisk for Cola - fra bryggeriet Iznogoud. Brygget på roer og kartofler.",
+                oprindelse: "Rusland",
+                billede: "billede21"
+            },
+            {
+                id: 65,
+                kategori: "drikkevarer",
+                navn: "Cola",
+                pris: 55,
+                kort: "Coca Cola",
+                lang: "Huset Petrograd's rødvin er produceret før 1990, og lagret i de dybe saltminer (normalt forbeholdt defekte atomvåben) i Yekaterinburg. Det giver vinen en særdeles karakteristisk glød, der viser sig ved svag stearinlys-belysning.",
+                oprindelse: "Yekaterinburg",
+                billede: "billede22"
+            },
+            {
+                id: 76,
+                kategori: "drikkevarer",
+                navn: "Ice tea ",
+                pris: 45,
+                kort: "normal Ice tea med færsken smag",
+                lang: "Vores hvidvin er brygget på de helt særlige druer der voksede frem i den uberørte natur omkring Pripyat. Vinen fremstilles lokalt i området, druerne trampes af trænede bjørne, og filtreres gennem et system af stadigt mindre babushka-filtre inde i hinanden. Du får ikke en lignende vin noget andet sted!",
+                oprindelse: "Pripyat",
+                billede: "billede23"
+            }
+        ]
+
+
+        function visRetterne() {
+            let liste = document.querySelector("#liste");
+            liste.innerHTML = "";
+
+            rett.forEach(ret => {
+                if (filter == "alle" || ret.kategori == filter) {
+                    let template = `<div class="mineretter"><img id="billede" src=billederne/${ret.billede}.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p>Pris: ${ret.pris}</p></div>`
+                    liste.insertAdjacentHTML("beforeend", template);
+                    liste.lastElementChild.addEventListener("click", visSingle);
+                    liste.lastElementChild.addEventListener("click", () => {
+                        visSingle(person);
+                    });
+
+                    function visSingle(person) {
+                        document.querySelector("#pop-op").style.display = "block";
+                        document.querySelector("#pop-op #lukknap").addEventListener("click", close);
+
+                        document.querySelector("#indhold").innerHTML = `<img id="storbillede" src=imgs/large/${ret.billede}.jpg alt="ret"><h2> ${ret.navn}</h2><p>${ret.lang}</p><p>Pris: ${ret.pris}</p>`;
+                        start();
+                    };
+
+                }
+
+            })
+
+        };
+
+        function close() {
+            document.querySelector("#pop-op").style.display = "none";
+        };
+
+
+
+
+
+
+        document.querySelectorAll(".filter").forEach(knap => {
+
+            knap.addEventListener("click", filtrering);
+        })
+
+        function filtrering() {
+            document.querySelectorAll(".filter").forEach(knap => {
+                knap.classList.remove("valgt");
+            });
+            this.classList.add("valgt");
+            document.querySelector("h1").textContent = this.textContent;
+            filter = this.getAttribute("data-hold");
+            console.log(filter);
+            visRetterne();
+        }
         let burgermenu = document.querySelector("#burgermenu");
         burgermenu.addEventListener("click", () => {
             if (document.querySelector("nav").className == "block") {
@@ -288,5 +911,8 @@
             }
         })
     </script>
+
 </body>
+
+
 </html>
