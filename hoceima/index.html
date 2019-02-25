@@ -13,7 +13,7 @@
             padding: 0;
             min-height: calc(100% - 100px);
             position: relative;
-            background-color: antiquewhite;
+            background-color: #545250;
         }
 
         html {
@@ -121,12 +121,13 @@
         #text {
             grid-column: 1/4;
             color: black;
-            font-size: 5vw;
+            font-size: 4.5vw;
             text-align: justify;
             padding-left: 2vw;
             padding-right: 2vw;
             padding-bottom: 25vw;
-
+            color: white;
+            margin: 2vw;
         }
 
         #overskrift {
@@ -186,6 +187,9 @@
 
 
         @media screen and (min-width: 600px) {
+            #text {
+                margin-top: 0vw;
+            }
 
             nav li {
                 margin: 0 1.9vw;
@@ -200,6 +204,9 @@
             #billede {
                 grid-column: 1/2;
                 grid-row: 2/3;
+                margin-top: 3vw;
+                padding-left: 3vw;
+                padding-right: 3vw;
             }
 
             #text {
@@ -292,10 +299,11 @@
             }
 
             #text {
-                font-size: 1vw;
-                padding-left: 10vw;
-                padding-right: 10vw;
-                padding-top: 9vw;
+                font-size: 1.5vw;
+                padding-left: 2vw;
+                padding-right: 2vw;
+                padding-top: 5vw;
+                width: 37vw;
             }
 
             container {
@@ -342,12 +350,12 @@
     </header>
     <container>
         <img id="billede" src="billeder/forside.png">
-        <h1 id="overskrift">Resturant Hoceima</h1>
+        <h1 id="overskrift">Restaurant Hoceima</h1>
         <div id="text">
             <h3>Hvem er vi?</h3>
-            <p>I hjertet af København finder man resturant Hoceima med et traditionelt strejf af det marokkanske køkken og interiør med en stemning, der bunder i marokkos historie og fortid.Der bliver serveret autentisk hjemmelavet marokansk mad, vi byder på alle marokkanske retter man kunne drømme om. Efter maden har man mulighed for at nyde den dejlige velkendte marokkanske mynte te som har fået meget ros verden over.</p>
+            <p>I hjertet af København finder man restaurant Hoceima, med et traditionelt strejf af det marokkanske køkken, og interiør med en stemning, der bunder i marokkos historie og fortid. Der bliver serveret autentisk hjemmelavet marokansk mad, vi byder på alle marokkanske retter man kunne drømme om. Efter maden har man mulighed for at nyde den dejlige velkendte marokkanske mynte te som har fået meget ros verden over.</p>
             <br>
-            <p>Resturanten blev startet op i 2010, og har gennem snart 10 været, stedet i københavn hvor marokkansk madkultur bliver repræsenteret bedst. Lige fra de mange velsmagene tajineretter til den varme søde mynte te.</p>
+            <p>Restauranten blev grundlagt i 2010, og har gennem snart 10 år været, stedet i københavn hvor marokkansk madkultur bliver repræsenteret bedst. Lige fra de mange velsmagene tajineretter til den varme søde mynte te.</p>
         </div>
 
     </container>
@@ -360,7 +368,7 @@
                     <h4>kontakt os:</h4>
                     <p><img id="h" src="billeder/home-solid.svg" alt="home">Borups alle 280 3 th </p>
                     <p><img id="h" src="billeder/envelope-open-regular.svg" alt="home">mouadnaji@hotmail.com </p>
-                    <p><img id="h" src="billeder/phone-solid.svg" alt="home">53832151</p>
+                    <p><img id="h" src="billeder/phone-solid.svg" alt="home">+4553832151</p>
                 </div>
             </row>
         </div>

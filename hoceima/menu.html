@@ -27,6 +27,7 @@
         html {
             height: 100%;
             position: relative;
+
         }
 
         header {
@@ -210,13 +211,7 @@
                 margin-right: 1vw;
             }
 
-            #billede {
-                grid-column: 1/2;
-                grid-row: 2/3;
-                border-radius: 2vw;
-            }
-
-            #text {
+            #billede #text {
                 grid-column: 2/3;
                 grid-row: 2/3;
                 font-size: 1.9vw;
@@ -341,7 +336,7 @@
 
         body {
             margin: 0;
-            background-color: antiquewhite;
+            background-color: #545250;
 
         }
 
@@ -361,7 +356,6 @@
         .mineretter {
             margin: 0.5vw;
             width: 100vw;
-            background-color: #7F5D0D;
             border-bottom-left-radius: 2vw;
             border-bottom-right-radius: 2vw;
             border-top-left-radius: 2vw;
@@ -371,14 +365,18 @@
 
         }
 
+        .mineretter {
+            box-shadow: 4px 4px #7F5D0D;
+            color: #CC8F00;
+
+        }
+
         .mineretter:nth-child(23) {
             margin-bottom: 25vw;
         }
 
-        .mineretter:nth-child(odd) {
-            background-color: #CC8F00;
 
-        }
+
 
         #billede {
             height: 70vw;
@@ -400,6 +398,8 @@
 
         #beholder {
             text-align: center;
+            align-content: center;
+            justify-content: center;
         }
 
 
@@ -408,18 +408,21 @@
         }
 
         .filter {
-            width: 20vw;
+            width: 25vw;
             height: 8vw;
             border-radius: 2vw;
-            font-size: 3vw;
+            font-size: 2.8vw;
             font-feature-settings: bold;
             margin: 1vw;
-            background-color: #CC8F00;
-            margin-top: 20vw
+            background-color: #7F5D0D;
+            margin-top: 20vw;
+            font-family: BioRhyme;
+            color: white;
+
         }
 
         .valgt {
-            background-color: #7F5D0D;
+            background-color: #CC8F00;
         }
 
         #pop-op {
@@ -427,9 +430,10 @@
             position: fixed;
             height: 100%;
             width: 100%;
-            background: hsla(0, 15%, 50%, 70%);
+            background: hsla(0, 1%, 0%, 50%);
             display: none;
             overflow: scroll;
+            color: #CC8F00;
         }
 
         #luk {
@@ -448,6 +452,17 @@
             margin: 4rem auto;
             overflow: scroll;
             border-radius: 2vw;
+            font-family: roboto;
+        }
+
+        #indhold p {
+            padding-left: 3vw;
+            padding-bottom: 1vw;
+        }
+
+        #indhold h2 {
+            font-family: BioRhyme;
+            padding-left: 3vw;
 
         }
 
@@ -457,7 +472,6 @@
             cursor: pointer;
             text-align: center;
             border-radius: 2vw;
-
         }
 
         #ovv {
@@ -465,8 +479,20 @@
             font-family: BioRhyme;
         }
 
-        #des {
+        .des {
             margin-top: 0;
+        }
+
+        #indhold p {
+            margin-left: 10vw;
+            margin-right: 10vw;
+            margin-bottom: 10vw;
+        }
+
+        #indhold h2 {
+            margin-left: 10vw;
+            margin-right: 10vw;
+            border-bottom: 0.5vw solid #7F5D0D;
         }
 
 
@@ -475,6 +501,11 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
 
+            }
+
+            #indhold {
+                margin-bottom: 10vw;
+                padding-bottom: 10vw;
             }
 
 
@@ -511,6 +542,10 @@
             #luk {
                 top: 15vw;
                 left: 95vw;
+            }
+
+            #liste {
+                margin-left: 9vw;
             }
 
 
@@ -591,8 +626,20 @@
                 left: 75vw;
             }
 
+            #indhold p {
+                margin-left: 10vw;
+                margin-right: 10vw;
+                margin-bottom: 0vw;
+            }
 
+        }
 
+        #ovv {
+            color: white;
+        }
+
+        button {
+            border: none;
         }
     </style>
 
@@ -630,10 +677,10 @@
         <button class="filter" data-hold="hovedretter">
             Hovedretter
         </button>
-        <button class="filter" data-hold="drikkevarer">
+        <button class="des filter" data-hold="drikkevarer">
             Drikkevarer
         </button>
-        <button id="des" class="filter" data-hold="deserter">
+        <button class="des filter" data-hold="deserter">
             Desserter
         </button>
     </div>
@@ -898,7 +945,7 @@
 
             rett.forEach(ret => {
                 if (filter == "alle" || ret.kategori == filter) {
-                    let template = `<div class="mineretter"><img id="billede" src=billederne/${ret.billede}.png alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p>Pris: ${ret.pris}</p></div>`
+                    let template = `<div class="mineretter"><img id="billede" src=billederne/${ret.billede}.png alt="ret"><h2> ${ret.navn}</h2><p>${ret.kort}</p><p><br>Pris: ${ret.pris}</p></div>`
                     liste.insertAdjacentHTML("beforeend", template);
                     liste.lastElementChild.addEventListener("click", visSingle);
                     liste.lastElementChild.addEventListener("click", () => {
