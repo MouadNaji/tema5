@@ -53,7 +53,7 @@
 
         let dyrene;
         async function start() {
-            const json = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1eBNqPb_SgxmA2kVMKTKGLCg5qyrGd0HoXPzaYXe7qJA");
+            const json = await fetch("dyr.json");
             dyrene = await json.json();
             visdyrene();
         }
