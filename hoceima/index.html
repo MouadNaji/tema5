@@ -196,6 +196,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
+            font-family: roboto;
         }
 
         #h {
@@ -208,12 +209,11 @@
         }
 
         #f {
-            margin-left: 1vw;
-            margin-top: 1vw;
+            padding-left: 0.4rem;
         }
 
 
-        @media screen and (min-width: 600px) {
+        @media screen and (min-width: 700px) {
 
             nav li {
                 margin: 0 1.9vw;
@@ -309,6 +309,11 @@
         }
 
         @media screen and (min-width: 1000px) {
+            #f {
+                padding: 0.4rem;
+
+            }
+
             nav li {
                 margin: 0 4vw;
 
@@ -418,6 +423,7 @@
             padding-bottom: 25vw;
             color: white;
             margin: 2vw;
+            hyphens: none | manual | auto;
         }
 
         #overskrift {
@@ -461,7 +467,7 @@
 
 
 
-        @media screen and (min-width: 600px) {
+        @media screen and (min-width: 700px) {
             #text {
                 margin-top: 0vw;
             }
@@ -471,7 +477,7 @@
             #billede {
                 grid-column: 1/2;
                 grid-row: 2/3;
-                margin-top: 3vw;
+                margin-top: 4.6vw;
                 padding-left: 3vw;
                 padding-right: 3vw;
             }
@@ -489,6 +495,7 @@
             #text h3 {
                 padding: 0;
                 margin: 0;
+                padding-top: 1rem;
             }
 
 
@@ -498,6 +505,17 @@
                 margin-bottom: 2vw;
 
             }
+
+            container {
+                position: absolute;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                top: 5vw;
+                margin: 0;
+                padding: 0;
+                padding-top: 0vw;
+            }
+
 
 
 
@@ -509,18 +527,12 @@
                 font-size: 1.5vw;
                 padding-left: 2vw;
                 padding-right: 2vw;
-                padding-top: 5vw;
+                padding-top: 6vw;
                 width: 37vw;
             }
 
-            container {
-                position: absolute;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                top: 5vw;
-                margin: 0;
-                padding: 0;
-                padding-top: 0vw;
+            #overskrift {
+                margin-bottom: 0;
             }
 
 

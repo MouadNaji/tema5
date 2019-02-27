@@ -4,8 +4,8 @@
         "kategori": "hovedretter",
         "navn": "Kyllinge tajine",
         "pris": 99,
-        "kort": "Kylling tilberedt i en tajine, marokansk brød følger med",
-        "lang": "marokkansk ret efter en klassisk opskrift fra Karapatien. Dejen blandes koldhæver 30 dage, inde brødet bages over bål. Meget sprødt, godt med Karapatisk bjerggedsmør.",
+        "kort": "Kylling tilberedt i en tajine",
+        "lang": "Kylling tilberedt i en tajine, marokansk brød følger medmarokkansk ret efter en klassisk opskrift fra Karapatien. Dejen blandes koldhæver 30 dage.",
         "oprindelse": "Karapatien",
         "billede": "billede1"
    },
@@ -14,7 +14,7 @@
         "kategori": "hovedretter",
         "navn": "vegetar Tajine",
         "pris": 99,
-        "kort": "Hakket kød tilberedt i en tajine, marokansk brød følger med",
+        "kort": "Hakket kød tilberedt i en tajine",
         "lang": "Marokkansk ret med rødbedecreme og creme er egentlig en forret, men kammerat Vladimir elskede denne ret så højt, at han forbød restauranter i Krigien at sælge det som andet end en hovedret. Vi anbefaler det dog som forret, inden en god Bortsjs. Skylles helst ned med vodka.",
         "oprindelse": "Krigien",
         "billede": "billede2"
@@ -24,7 +24,7 @@
         "kategori": "hovedretter",
         "navn": "Paella",
         "pris": 99,
-        "kort": "bitilberedt i en tajine, marokansk brød følger med",
+        "kort": "Fiske ret yilberedt i en tajine",
         "lang": "Til denne dejlige Bruschetta anvender vi kun de dejligste sibiriske Caviar. Caviarerne presses ud af fiskene mens de stadig er levende, og vædes derefter i Putinka Vodka. Der er masser af bjerggedesmør på bruschettaene.",
         "oprindelse": "Sibirien",
         "billede": "billede3"
@@ -32,10 +32,10 @@
     {
         "id": 17,
         "kategori": "hovedretter",
-        "navn": "Lammekøds tajine",
+        "navn": "lamme tajine",
         "pris": 99,
-        "kort": " lammekød tilberedt i en tajine, marokansk brød følger med",
-        "lang": "Baltisk bondesuppe er en solid starter. Godt til dig, der skal drikke godt igennem under måltidet. Suppen består af ged, grønt og masser af løg.",
+        "kort": "Lammekød tilberedt i en tajine",
+        "lang": "Lammekød tilberedt i en tajine, marokansk brød følger med. Baltisk bondesuppe er en solid starter. Godt til dig, der skal drikke godt igennem under måltidet. Suppen består af ged, grønt og masser af løg.",
         "oprindelse": "Baltikum",
         "billede": "billede4"
    },
@@ -44,8 +44,8 @@
         "kategori": "hovedretter",
         "navn": "Oksekøds tajine",
         "pris": 99,
-        "kort": "oksekød tilberedt i ovnen, brød følger med",
-        "lang": "Denne lækre suppe består af 7 forskellige slags kål: Hvidkål, grønkål, brunkål, spidskål, kabanossikål, sibirisk kål og kålrabi. Dertil en masse Voda (vand) og krydderier fra Østsibirien.",
+        "kort": "Oksekød tilberedt i ovnen",
+        "lang": "Oksekød tilberedt i ovnen, brød følger med. Denne lækre suppe består af 7 forskellige slags kål: Hvidkål, grønkål, brunkål, spidskål, kabanossikål, sibirisk kål og kålrabi. Dertil en masse Voda (vand) og krydderier fra Østsibirien.",
         "oprindelse": "Østsibirien",
         "billede": "billede5"
    },
@@ -54,7 +54,7 @@
         "kategori": "hovedretter",
         "navn": "Grøntsags koskos",
         "pris": 75,
-        "kort": "koskos med grøntsager",
+        "kort": "Koskos med grøntsager",
         "lang": "Da Caucesku var i færd med at skrive sit navn med højhuse, var han nødt til at give håndværkerne solid kost, så de kunne arbejde 18 timer i døgnet, 7 dage om ugen: Bulgarsk bondesuppe. Suppen består af alt det bedste fra Bulgarien.",
         "oprindelse": "Bulgarien",
         "billede": "billede6"
@@ -72,9 +72,9 @@
     {
         "id": 25,
         "kategori": "hovedretter",
-        "navn": "Lammkøds koskos",
+        "navn": "Lamm koskos",
         "pris": 85,
-        "kort": "lammekød med koskos og grøntsager",
+        "kort": "Lammekød med koskos",
         "lang": "Diplomatiet har haft mange udfordringer i USSR. Derfor blev der sørget godt for dem, og som nogen af de få, fik diplomaterne mange bøffer under den kolde krig. Diplomat-bøffen med grillede grøntsager og koldpresset olie er af ypperste kvalitet - kødet kommer fra udsultede ungkalve i Viktoriagrad.",
         "oprindelse": "Viktoriagrad",
         "billede": "billede8"
@@ -84,7 +84,7 @@
         "kategori": "hovedretter",
         "navn": "Grøntsags koskos",
         "pris": 85,
-        "kort": "oksekøds med koskos og grøntsager",
+        "kort": "Oksekøds med koskos og grøntsager",
         "lang": "Under de trange vilkår på landet Sibirien, bød husmændene på Zygroffs bondeplatte, når der var fest. Gode, grove grøntsager, tørret bøffelkod og masser af æg. Specielt for bondeplatten blev de dejlige caviar skiftet ud med billige kapers.",
         "oprindelse": "Sibirien",
         "billede": "billede9"
@@ -92,29 +92,29 @@
     {
         "id": 36,
         "kategori": "hovedretter",
-        "navn": "Lammekød med oliven",
+        "navn": "Lam med oliven",
         "pris": 99,
-        "kort": "fisk tilberedt i en tajine, marokansk brød følger med",
-        "lang": "Der er blevet sagt meget om det marokkanske køkken, men godt har sjældent været et af tillægsordene. Russisk tapas er dog lækkert. Inspireret af duften af Italien får du her tørret bøffelkød, hvidt brød og tomater badet i koldpresset olie.",
+        "kort": "Lam tilberedt i en tajine",
+        "lang": "Fisk tilberedt i en tajine marokansk brød følger medDer er blevet sagt meget om det marokkanske køkken, men godt har sjældent været et af tillægsordene. Russisk tapas er dog lækkert. ",
         "oprindelse": "Rusland",
         "billede": "billede10"
    },
     {
         "id": 38,
         "kategori": "hovedretter",
-        "navn": "kylling med løg",
+        "navn": "kylling ris",
         "pris": 139,
-        "kort": "kylling med grøntsager og brød følger med",
-        "lang": "Denne suppe fra Marokko er unik ved at være forholdsvis stærk. Suppen koges på basis af Zyganoff Vodka i 24 timer. Meget af alkoholen damper væk, men der er typisk en rest på ca. 8% alkohol tilbage, så spiser du godt med suppe, skal du nok blive bims.",
+        "kort": "kylling med grøntsager",
+        "lang": "kylling med grøntsager og brød følger med Denne suppe fra Marokko er unik ved at være forholdsvis stærk. Suppen koges på basis af Zyganoff Vodka i 24 timer.",
         "oprindelse": "Moldavien",
         "billede": "billede11"
    },
     {
         "id": 41,
         "kategori": "hovedretter",
-        "navn": "koskos salat",
-        "pris": 65,
-        "kort": "marokansk suppe",
+        "navn": "salat",
+        "pris": 75,
+        "kort": "Marokkansk salat",
         "lang": "Dynrup - marokkansk bulgur med skovsvampe fra det østlige Kirgisistan. Svampene minder om kantarelle, men med en mere støvet smag.",
         "oprindelse": "Rusland",
         "billede": "billede12"
@@ -124,8 +124,8 @@
         "kategori": "forretter",
         "navn": "Harira",
         "pris": 45,
-        "kort": "marokkansk tomat suppe, serveres med brød",
-        "lang": "suppe med Bordyriske ørne-kaviar. Ørne laver kaviar på størrelse med peberkorn. Og de smager af kaviar. Ikke peber. Lækkert.",
+        "kort": "Marokkansk tomat suppe",
+        "lang": "Marokkansk tomat suppe, serveres med brød. Suppe med Bordyriske ørne-kaviar. Ørne laver kaviar på størrelse med peberkorn. Og de smager af kaviar. Ikke peber. Lækkert.",
         "oprindelse": "Bordurien",
         "billede": "billede13"
    },
@@ -134,8 +134,8 @@
         "kategori": "forretter",
         "navn": "Barir",
         "pris": 45,
-        "kort": "marokansk pandekage serveres med marmelade",
-        "lang": "Guzni - den verdenskendte rødbede/nøddeis fra Petrograd. Kammerat Boris Guzni var stor fan af den, og spiste den hver dag under Den kolde krig.",
+        "kort": "Marokansk pandekage",
+        "lang": "Marokansk pandekage serveres med marmelade. Guzni - den verdenskendte rødbede/nøddeis fra Petrograd. Kammerat Boris Guzni var stor fan af den, og spiste den hver dag under Den kolde krig.",
         "oprindelse": "Petrograd",
         "billede": "billede14"
    },
@@ -144,8 +144,8 @@
         "kategori": "forretter",
         "navn": "Msemen",
         "pris": 45,
-        "kort": "marokkansk pandekage serveres med honning",
-        "lang": "I det nordlige Kirgisistan består en væsentlig del af kostpyramiden af forskellige kålvarianter og nødder. Mama Dushku fandt på denne ret, som en hyldest til det røde flag med hammer og segl.",
+        "kort": "Marokkansk pandekage",
+        "lang": "Marokkansk pandekage serveres med honning. I det nordlige Kirgisistan består en væsentlig del af kostpyramiden af forskellige kålvarianter og nødder. Mama Dushku fandt på denne ret, som en hyldest til det røde flag med hammer og segl.",
         "oprindelse": "Kirgisistan",
         "billede": "billede15"
    },
@@ -154,8 +154,8 @@
         "kategori": "forretter",
         "navn": "Harsha",
         "pris": 45,
-        "kort": "marokkansk pandekage/brød serveres med honning",
-        "lang": "Pavlova - de berømte festlige russiske pandekager - serveres i lækker honningmelon fra Nordkorea",
+        "kort": "Marokkansk pandekage/brød",
+        "lang": "Marokkansk pandekage/brød serveres med honning. Pavlova - de berømte festlige russiske pandekager - serveres i lækker honningmelon fra Nordkorea",
         "oprindelse": "Nordkorea",
         "billede": "billede16"
    },
@@ -164,7 +164,7 @@
         "kategori": "deserter",
         "navn": "Bestilla",
         "pris": 45,
-        "kort": "kage",
+        "kort": "Marokkansk kage",
         "lang": "Groggishorn - det russiske svar på pølsehorn, bare meget mere rustikt og spændende",
         "oprindelse": "Rusland",
         "billede": "billede17"
@@ -174,7 +174,7 @@
         "kategori": "deserter",
         "navn": "Margribia",
         "pris": 45,
-        "kort": "Kage",
+        "kort": "Marokkansk Kage",
         "lang": "Et lækkert festfyrværkeri af festlige søde, vodkasyltede løg",
         "oprindelse": "Moskva",
         "billede": "billede18"
@@ -182,10 +182,10 @@
     {
         "id": 55,
         "kategori": "hovedretter",
-        "navn": "Tajine med kylling/bløde løg",
-        "pris": 35,
-        "kort": "marokansk traditionel kyllinge tajine med brød",
-        "lang": "En halv liter Bochkarev fadøl. Skåll!",
+        "navn": "kylling/bløde løg",
+        "pris": 99,
+        "kort": "Marokansk traditionel kyllinge tajine",
+        "lang": "Marokansk traditionel kyllinge tajine med brød. En halv liter Bochkarev fadøl. Skåll!",
         "oprindelse": "Skt Petersburg",
         "billede": "billede19"
    },

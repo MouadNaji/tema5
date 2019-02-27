@@ -217,12 +217,13 @@
         }
 
         #f {
-            margin-left: 1vw;
-            margin-top: 1vw;
+            padding-left: 0.4rem;
         }
 
 
-        @media screen and (min-width: 600px) {
+
+
+        @media screen and (min-width: 700px) {
 
             nav li {
                 margin: 0 1.9vw;
@@ -318,6 +319,11 @@
         }
 
         @media screen and (min-width: 1000px) {
+            #f {
+                padding: 0.4rem;
+
+            }
+
             nav li {
                 margin: 0 4vw;
 
@@ -414,14 +420,22 @@
         }
 
         .mineretter p {
-            text-align: left;
+            text-align: center;
             padding-left: 1vw;
             font-family: roboto;
+
+            padding-bottom: 1rem;
+
+
+        }
+
+        .mineretter p+p {
+            font-family: spirax;
             color: white;
         }
 
         .mineretter h2 {
-            font-family: roboto;
+            font-family: spirax;
         }
 
         .mineretter {
@@ -453,7 +467,6 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border-radius: 2vw;
         }
 
         #beholder {
@@ -476,7 +489,7 @@
             margin: 1vw;
             background-color: #7F5D0D;
             margin-top: 20vw;
-            font-family: BioRhyme;
+            font-family: spirax;
             color: white;
 
         }
@@ -498,10 +511,9 @@
 
         #luk {
             position: relative;
-            top: 11.7%;
-            left: 95%;
+            top: 12.7%;
+            left: 93%;
             border-radius: 2vw;
-            ;
 
         }
 
@@ -536,7 +548,7 @@
 
         #ovv {
             padding-left: 3vw;
-            font-family: BioRhyme;
+            font-family: spirax;
         }
 
         .des {
@@ -603,7 +615,7 @@
 
             #luk {
                 top: 15vw;
-                left: 95vw;
+                left: 93vw;
             }
 
             .mineretter {
@@ -655,7 +667,7 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                border-radius: 2vw;
+
             }
 
             #indhold {
@@ -697,7 +709,7 @@
 
             #luk {
 
-                top: 9vw;
+                top: 8rem;
                 left: 75vw;
             }
 
@@ -721,6 +733,7 @@
             border-bottom: 2px #7F5D0D solid;
             background-color: aqua;
         }
+
     </style>
 
 </head>
@@ -854,6 +867,7 @@
                 document.querySelector("nav ul").classList.add("opacity")
             }
         })
+
     </script>
 
 </body>
